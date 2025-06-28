@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Script à copier</title>
+</head>
+<body>
+  <h2>Voici le script à copier :</h2>
+  <pre id="scriptCode">
+console.log("Salut, c'est mon script !");
+  </pre>
+  <button onclick="copyScript()">Copier le script</button>
+
+  <script>
+    function copyScript() {
+      const code = document.getElementById('scriptCode').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('Script copié dans le presse-papier !');
+      });
+    }
+  </script>
+</body>
+</html>
