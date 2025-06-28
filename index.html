@@ -3,6 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <title>Script à copier</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    pre {
+      font-size: 1.5rem;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      max-width: 90%;
+      overflow-x: auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <h2>Voici le script à copier :</h2>
@@ -13,9 +56,11 @@ console.log("Salut, c'est mon script !");
 
   <script>
     function copyScript() {
-      const code = document.getElementById('scriptCode').innerText;
+      const code = document.getElementById('scriptCode').innerText.trim();
       navigator.clipboard.writeText(code).then(() => {
         alert('Script copié dans le presse-papier !');
+      }).catch(() => {
+        alert('Impossible de copier le script.');
       });
     }
   </script>
